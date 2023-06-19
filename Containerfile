@@ -37,5 +37,6 @@ COPY scripts /tmp/scripts
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
+        systemctl enable keyd.service && \
         rm -rf /tmp/* /var/* && \
         ostree container commit
