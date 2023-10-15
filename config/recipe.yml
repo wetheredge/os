@@ -5,33 +5,4 @@ base-image: ghcr.io/ublue-os/sericea-main
 image-version: latest
 
 modules:
-  - type: files
-    files:
-      - usr: /usr
-
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/alternateved/keyd/repo/fedora-%OS_VERSION%/alternateved-keyd-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    install:
-      - fish
-      - keyd
-      - micro
-      - starship
-    remove:
-      # Remove the native firefox (from Fedora) in favor of the flatpak
-      - firefox
-      - firefox-langpacks
-
-  - type: systemd
-    system:
-      enabled:
-        - keyd.service
-
-  - type: bling
-    install:
-      - devpod
-
-  - type: script
-    scripts:
-      - signing.sh
+  - from-file: base.yaml
