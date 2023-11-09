@@ -22,9 +22,9 @@ modules:
       enabled:
         - keyd.service
 
-  - type: bling
-    install:
-      - devpod
+  # - type: bling
+  #   install:
+  #     - devpod
 
   - type: script
     scripts:
