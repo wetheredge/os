@@ -23,10 +23,4 @@ modules:
       enabled:
         - keyd.service
 
-  # - type: bling
-  #   install:
-  #     - devpod
-
-  - type: script
-    scripts:
-      - signing.sh
+  - type: signing
