@@ -13,6 +13,7 @@ modules:
       - fish
       - gnome-keyring
       - keyd
+      - libimobiledevice-utils
       - micro
       - niri
       - starship
