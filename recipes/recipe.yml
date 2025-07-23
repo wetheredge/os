@@ -6,3 +6,11 @@ image-version: latest
 
 modules:
   - from-file: base.yaml
+
+  - type: rpm-ostree
+    repos:
+      - https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+    keys:
+      - https://www.virtualbox.org/download/oracle_vbox.asc
+    install:
+      - VirtualBox-7.1
